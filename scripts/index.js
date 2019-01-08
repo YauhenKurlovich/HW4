@@ -21,7 +21,17 @@ if (isNumber == false) {
     var el = document.getElementById("container");
     el.appendChild(newElement);
 } else {
-    newElement.innerHTML = str.toUpperCase();
+    var arr = str.split('');
+    for (var i = 0; i < arr.length; i++) {
+        if (i % 2 == 0) {
+            arr[i] = arr[i].toLowerCase();
+        } else {
+            arr[i] = arr[i].toUpperCase();
+        }
+    }
+    str = arr.join('');
+    newElement.innerHTML = str;
     var el = document.getElementById("container");
     el.appendChild(newElement);
+
 }
